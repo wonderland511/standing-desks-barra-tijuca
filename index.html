@@ -217,31 +217,40 @@
     border:1px solid var(--border);
     border-radius:var(--radius);
     box-shadow:var(--shadow);
-    margin-bottom:24px;
+    margin-bottom:16px;
     overflow:hidden;
     display:grid;
-    grid-template-columns:280px 1fr;
+    grid-template-columns:180px 1fr;
+    align-items:start;
   }
-  @media (max-width:720px){ .detail-card{grid-template-columns:1fr;} }
-  .detail-card .photo{background:var(--table-row-alt);}
-  .detail-card .photo img{width:100%;height:100%;object-fit:cover;display:block;min-height:220px;}
-  .detail-card .content{padding:24px 28px;}
+  @media (max-width:640px){ .detail-card{grid-template-columns:1fr;} }
+  .detail-card .photo{
+    background:var(--table-row-alt);
+    aspect-ratio:1/1;
+    width:100%;
+    overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .detail-card .photo img{
+    width:100%;height:100%;object-fit:contain;display:block;padding:10px;
+  }
+  .detail-card .content{padding:16px 20px;}
   .detail-card .tag{
-    display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;
-    padding:4px 10px;border-radius:999px;color:#fff;margin-bottom:10px;
+    display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;
+    padding:3px 9px;border-radius:999px;color:#fff;margin-bottom:8px;
   }
-  .detail-card h3{font-size:20px;margin:0 0 4px;font-weight:700;}
+  .detail-card h3{font-size:17px;margin:0 0 3px;font-weight:700;}
   .detail-card h3 a{color:var(--text);text-decoration:none;}
   .detail-card h3 a:hover{color:var(--accent);}
-  .detail-card .price{font-size:19px;font-weight:700;color:var(--accent-2);margin-bottom:14px;}
-  .spec-line{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:6px 0;border-top:1px solid var(--border);}
+  .detail-card .price{font-size:16px;font-weight:700;color:var(--accent-2);margin-bottom:10px;}
+  .spec-line{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:4px 0;border-top:1px solid var(--border);}
   .spec-line:first-of-type{border-top:none;}
   .spec-line .k{color:var(--text-secondary);}
   .spec-line .v{font-weight:600;text-align:right;}
-  .why, .nuance{font-size:13.5px;margin-top:12px;color:var(--text-secondary);}
+  .why, .nuance{font-size:12px;margin-top:8px;color:var(--text-secondary);line-height:1.4;}
   .why b, .nuance b{color:var(--text);}
   .detail-card .link{
-    display:inline-block;margin-top:14px;font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none;
+    display:inline-block;margin-top:10px;font-size:12px;font-weight:600;color:var(--accent);text-decoration:none;
   }
   .detail-card .link:hover{text-decoration:underline;}
 
