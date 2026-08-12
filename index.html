@@ -1,0 +1,615 @@
+<title>Электрические столы для Barra da Tijuca — подборка 2026</title>
+
+<style>
+  :root{
+    --bg:#f5f5f7;
+    --bg-elevated:#ffffff;
+    --text:#1d1d1f;
+    --text-secondary:#6e6e73;
+    --border:#d2d2d7;
+    --accent:#0071e3;
+    --accent-2:#0a7d5c;
+    --badge-bg:#0a7d5c;
+    --badge-purple:#5e5ce6;
+    --badge-blue:#0071e3;
+    --badge-dark:#1d1d1f;
+    --table-head:#1d1d1f;
+    --table-head-text:#ffffff;
+    --table-row-alt:#fafafa;
+    --shadow:0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.04);
+    --radius:18px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#000000;
+      --bg-elevated:#1c1c1e;
+      --text:#f5f5f7;
+      --text-secondary:#a1a1a6;
+      --border:#3a3a3c;
+      --accent:#2997ff;
+      --accent-2:#32d74b;
+      --badge-bg:#1f7a52;
+      --badge-purple:#7d7aff;
+      --badge-blue:#2997ff;
+      --badge-dark:#3a3a3c;
+      --table-head:#1c1c1e;
+      --table-head-text:#f5f5f7;
+      --table-row-alt:#161618;
+      --shadow:0 1px 3px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#000000;
+    --bg-elevated:#1c1c1e;
+    --text:#f5f5f7;
+    --text-secondary:#a1a1a6;
+    --border:#3a3a3c;
+    --accent:#2997ff;
+    --accent-2:#32d74b;
+    --badge-bg:#1f7a52;
+    --badge-purple:#7d7aff;
+    --badge-blue:#2997ff;
+    --badge-dark:#3a3a3c;
+    --table-head:#1c1c1e;
+    --table-head-text:#f5f5f7;
+    --table-row-alt:#161618;
+    --shadow:0 1px 3px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display",Helvetica Neue,Arial,sans-serif;
+    margin:0;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1160px;margin:0 auto;padding:56px 24px 96px;}
+
+  header.page{margin-bottom:48px;}
+  .eyebrow{
+    color:var(--text-secondary);
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  h1{
+    font-size:clamp(32px,5vw,48px);
+    font-weight:700;
+    letter-spacing:-0.02em;
+    margin:0 0 12px;
+  }
+  .sub{
+    color:var(--text-secondary);
+    font-size:17px;
+    max-width:640px;
+  }
+
+  .meta-grid{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:0;
+    background:var(--bg-elevated);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    margin-top:32px;
+    box-shadow:var(--shadow);
+  }
+  .meta-grid > div{padding:14px 20px;border-top:1px solid var(--border);font-size:14px;}
+  .meta-grid > div:nth-child(-n+2){border-top:none;}
+  .meta-grid .k{color:var(--text-secondary);font-weight:600;}
+  .meta-grid .v{color:var(--text);}
+
+  h2{
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin:64px 0 24px;
+  }
+
+  /* priority cards */
+  .priority-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+  }
+  .pcard{
+    background:var(--bg-elevated);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    text-decoration:none;
+    color:var(--text);
+    opacity:0;
+    transform:translateY(20px);
+  }
+  .pcard .imgwrap{
+    aspect-ratio:4/3;
+    background:var(--table-row-alt);
+    overflow:hidden;
+    position:relative;
+  }
+  .pcard img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+  .pcard:hover img{transform:scale(1.05);}
+  .pcard .badge{
+    position:absolute;top:12px;left:12px;
+    background:var(--badge-bg);color:#fff;
+    font-size:11px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;
+    padding:5px 10px;border-radius:999px;
+  }
+  .pcard .body{padding:18px 20px 22px;flex:1;display:flex;flex-direction:column;}
+  .pcard .name{font-size:17px;font-weight:700;margin:0 0 4px;}
+  .pcard .price{font-size:20px;font-weight:700;color:var(--accent-2);margin:0 0 10px;}
+  .pcard .desc{font-size:13.5px;color:var(--text-secondary);flex:1;}
+  .pcard .cta{
+    margin-top:14px;font-size:13px;font-weight:600;color:var(--accent);
+    display:flex;align-items:center;gap:4px;
+  }
+
+  /* comparison table */
+  .table-scroll{
+    overflow-x:auto;
+    border-radius:var(--radius);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    background:var(--bg-elevated);
+  }
+  table{border-collapse:collapse;width:100%;min-width:920px;font-size:14px;}
+  thead th{
+    background:var(--table-head);
+    color:var(--table-head-text);
+    text-align:left;
+    padding:14px 16px;
+    font-weight:600;
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    white-space:nowrap;
+  }
+  tbody td{
+    padding:12px 16px;
+    border-top:1px solid var(--border);
+    vertical-align:middle;
+    white-space:nowrap;
+  }
+  tbody tr:nth-child(even){background:var(--table-row-alt);}
+  tbody tr:hover{background:color-mix(in srgb, var(--accent) 6%, transparent);}
+  .model-cell{display:flex;align-items:center;gap:12px;white-space:nowrap;}
+  .model-cell img{
+    width:52px;height:40px;object-fit:cover;border-radius:8px;
+    border:1px solid var(--border);flex-shrink:0;
+  }
+  .model-cell a{color:var(--text);font-weight:600;text-decoration:none;}
+  .model-cell a:hover{color:var(--accent);text-decoration:underline;}
+  .verdict{color:var(--text-secondary);font-size:13px;white-space:normal;}
+  .price-cell{font-weight:700;color:var(--accent-2);}
+
+  /* detail cards */
+  .detail-card{
+    background:var(--bg-elevated);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    margin-bottom:24px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:280px 1fr;
+    opacity:0;
+    transform:translateY(20px);
+  }
+  @media (max-width:720px){ .detail-card{grid-template-columns:1fr;} }
+  .detail-card .photo{background:var(--table-row-alt);}
+  .detail-card .photo img{width:100%;height:100%;object-fit:cover;display:block;min-height:220px;}
+  .detail-card .content{padding:24px 28px;}
+  .detail-card .tag{
+    display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;
+    padding:4px 10px;border-radius:999px;color:#fff;margin-bottom:10px;
+  }
+  .detail-card h3{font-size:20px;margin:0 0 4px;font-weight:700;}
+  .detail-card h3 a{color:var(--text);text-decoration:none;}
+  .detail-card h3 a:hover{color:var(--accent);}
+  .detail-card .price{font-size:19px;font-weight:700;color:var(--accent-2);margin-bottom:14px;}
+  .spec-line{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:6px 0;border-top:1px solid var(--border);}
+  .spec-line:first-of-type{border-top:none;}
+  .spec-line .k{color:var(--text-secondary);}
+  .spec-line .v{font-weight:600;text-align:right;}
+  .why, .nuance{font-size:13.5px;margin-top:12px;color:var(--text-secondary);}
+  .why b, .nuance b{color:var(--text);}
+  .detail-card .link{
+    display:inline-block;margin-top:14px;font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none;
+  }
+  .detail-card .link:hover{text-decoration:underline;}
+
+  /* final rec table */
+  .rec-table{width:100%;border-collapse:collapse;font-size:14px;}
+  .rec-table th{background:var(--table-head);color:var(--table-head-text);text-align:left;padding:12px 16px;font-size:12.5px;text-transform:uppercase;letter-spacing:0.02em;}
+  .rec-table td{padding:12px 16px;border-top:1px solid var(--border);}
+  .rec-table tr:nth-child(even) td{background:var(--table-row-alt);}
+  .rec-table a{color:var(--accent);font-weight:600;text-decoration:none;}
+  .rec-table a:hover{text-decoration:underline;}
+
+  ol.checklist{padding-left:20px;font-size:14.5px;color:var(--text-secondary);}
+  ol.checklist li{margin-bottom:8px;}
+  ol.checklist b{color:var(--text);}
+
+  footer.page{
+    margin-top:64px;padding-top:24px;border-top:1px solid var(--border);
+    color:var(--text-secondary);font-size:12.5px;
+  }
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <div class="eyebrow">Подборка для покупки в Бразилии</div>
+    <h1>Электрические столы с&nbsp;регулировкой высоты</h1>
+    <p class="sub">Barra da Tijuca, Rio de Janeiro · CEP 22640‑102. Только электрические sit/stand столы. Главный критерий — качество механики, стабильность, диапазон высоты, нагрузка, гарантия/сервис и реальная цена в Бразилии.</p>
+    <div class="meta-grid">
+      <div class="k">Дата проверки</div><div class="v">12 августа 2026</div>
+      <div class="k">Доставка</div><div class="v">Для Fortrek и Slikdesk бесплатная доставка в RJ подтверждается публичными правилами. Для Mercado Livre учитывается текущая пометка frete grátis; точный срок всё равно подтверждается в checkout по CEP.</div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Короткий ответ: что брать</h2>
+    <div class="priority-grid" id="priority-grid">
+      <a class="pcard" href="https://loja.fortrek.com.br/mesa-eletrica-altura-ajustavel-motor-unico-fortrek-lift-preta-120x60?condition=N" target="_blank" rel="noopener">
+        <div class="imgwrap"><span class="badge" style="background:var(--badge-dark)">Мин. бюджет</span><img src="https://static.mundomax.com.br/produtos/86969/550/1.jpg" alt="Fortrek Lift 120×60"></div>
+        <div class="body">
+          <p class="name">Fortrek Lift 120×60</p>
+          <p class="price">≈ R$806</p>
+          <p class="desc">Самая рациональная цена за полноценный электрический стол.</p>
+          <span class="cta">Открыть товар →</span>
+        </div>
+      </a>
+      <a class="pcard" href="https://lojaelevate.com.br/produto/mesa-regulagem-altura-eletrico-elevate-320-com-tampo/" target="_blank" rel="noopener">
+        <div class="imgwrap"><span class="badge">Лучший баланс</span><img src="https://lojaelevate.com.br/wp-content/uploads/2025/03/320-Preta-Tampo-Louro-Freijo-de-Frente-160cm.jpg" alt="Elevate 320 140×70"></div>
+        <div class="body">
+          <p class="name">Elevate 320 140×70</p>
+          <p class="price">≈ R$2.3–2.7k</p>
+          <p class="desc">2 мотора, 100 кг нагрузки, 2 года гарантии на базу.</p>
+          <span class="cta">Открыть товар →</span>
+        </div>
+      </a>
+      <a class="pcard" href="https://www.mercadolivre.com.br/mesa-eletrica-cougar-e-grav-180-2-configuracoes-preta/p/MLB61583604" target="_blank" rel="noopener">
+        <div class="imgwrap"><span class="badge" style="background:var(--badge-purple)">Большой стол</span><img src="https://cougargaming.com/_cgrwdr_/wwdpp/wp-content/uploads/2024/11/E-Grav-Generous-Desktop-Dimensions-2560-1.jpg" alt="Cougar E-Grav 180"></div>
+        <div class="body">
+          <p class="name">Cougar E‑Grav 180</p>
+          <p class="price">R$2.379</p>
+          <p class="desc">180×80 см, 2 мотора, нагрузка до 120 кг.</p>
+          <span class="cta">Открыть товар →</span>
+        </div>
+      </a>
+      <a class="pcard" href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro" target="_blank" rel="noopener">
+        <div class="imgwrap"><span class="badge" style="background:var(--badge-blue)">Премиум</span><img src="https://geniodesk.com.br/cdn/shop/files/PRO_19286aa1-d316-43f6-9f15-7a8f4c5e4e15.webp?v=1781182271" alt="GenioDesk PRO"></div>
+        <div class="body">
+          <p class="name">GenioDesk PRO</p>
+          <p class="price">R$4.511 Pix</p>
+          <p class="desc">66–129 см, нагрузка 120 кг, гарантия 4 года.</p>
+          <span class="cta">Открыть товар →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Сводное сравнение</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Модель</th><th>Цена*</th><th>Размер / варианты</th><th>Высота</th><th>Нагрузка</th><th>Моторы</th><th>Доставка к CEP</th><th>Вердикт</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="model-cell"><img src="https://static.mundomax.com.br/produtos/86969/550/1.jpg" alt="Fortrek Lift"><a href="https://loja.fortrek.com.br/mesa-eletrica-altura-ajustavel-motor-unico-fortrek-lift-preta-120x60?condition=N" target="_blank" rel="noopener">Fortrek Lift</a></div></td>
+            <td class="price-cell">R$806</td><td>120×60</td><td>73–118</td><td>60 кг</td><td>1</td><td>Бесплатно: RJ</td><td class="verdict">Лучший бюджет</td>
+          </tr>
+          <tr>
+            <td><div class="model-cell"><img src="https://m.media-amazon.com/images/I/61IByyEqR2L._AC_SL1500_.jpg" alt="Xyndyx Amazon"><a href="https://www.amazon.com.br/Xyndyx-el%C3%A9trica-ajust%C3%A1vel-escrit%C3%B3rio-superior/dp/B0F93SXDH6" target="_blank" rel="noopener">Xyndyx Amazon</a></div></td>
+            <td class="price-cell">~R$1.413</td><td>122×60</td><td>≈76–123</td><td>80 кг</td><td>1</td><td>Checkout Amazon</td><td class="verdict">Альтернатива Amazon</td>
+          </tr>
+          <tr>
+            <td><div class="model-cell"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/slikdesk-starter-castanho-rustico-01-1c60028d541a11d26417724607853483-1024-1024.png" alt="Slikdesk Starter"><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-starter/" target="_blank" rel="noopener">Slikdesk Starter</a></div></td>
+            <td class="price-cell">R$1.510 Pix</td><td>120×60</td><td>72–114</td><td>70 кг</td><td>1</td><td>Бесплатно: RJ</td><td class="verdict">Лучше по сервису</td>
+          </tr>
+          <tr>
+            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/HOME_a03350d0-2914-4bb4-8e0a-d618f97a1c3c.webp?v=1781182477" alt="GenioDesk HOME"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-home" target="_blank" rel="noopener">GenioDesk HOME</a></div></td>
+            <td class="price-cell">R$2.707 Pix</td><td>120/140/160×70</td><td>74–121</td><td>70 кг</td><td>1</td><td>Checkout</td><td class="verdict">Качественно, но дорого за 1 мотор</td>
+          </tr>
+          <tr>
+            <td><div class="model-cell"><img src="https://cougargaming.com/_cgrwdr_/wwdpp/wp-content/uploads/2024/11/E-Grav-Generous-Desktop-Dimensions-2560-1.jpg" alt="Cougar E-Grav 180"><a href="https://www.mercadolivre.com.br/mesa-eletrica-cougar-e-grav-180-2-configuracoes-preta/p/MLB61583604" target="_blank" rel="noopener">Cougar E‑Grav 180</a></div></td>
+            <td class="price-cell">R$2.379</td><td>180×80</td><td>73–118</td><td>120 кг</td><td>2</td><td>ML: frete grátis</td><td class="verdict">Лучший большой</td>
+          </tr>
+          <tr>
+            <td><div class="model-cell"><img src="https://lojaelevate.com.br/wp-content/uploads/2025/03/320-Preta-Tampo-Louro-Freijo-de-Frente-160cm.jpg" alt="Elevate 320"><a href="https://lojaelevate.com.br/produto/mesa-regulagem-altura-eletrico-elevate-320-com-tampo/" target="_blank" rel="noopener">Elevate 320</a></div></td>
+            <td class="price-cell">R$2.290–2.690</td><td>120–180 × 60/70</td><td>74–122</td><td>100 кг</td><td>2</td><td>Checkout</td><td class="verdict">Лучший баланс</td>
+          </tr>
+          <tr>
+            <td><div class="model-cell"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro-capa-3da4c0d6b50a8f5ca417742813205463-640-0.jpg" alt="Slikdesk Flex Pro"><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro/" target="_blank" rel="noopener">Slikdesk Flex Pro</a></div></td>
+            <td class="price-cell">R$2.461 Pix</td><td>от 80×60</td><td>65–130</td><td>80 кг</td><td>1</td><td>Бесплатно: RJ</td><td class="verdict">Лучший диапазон</td>
+          </tr>
+          <tr>
+            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/PLUS_51d4590d-0fd2-40b4-b154-ef114703c1f3.webp?v=1781182369" alt="GenioDesk PLUS"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-plus" target="_blank" rel="noopener">GenioDesk PLUS</a></div></td>
+            <td class="price-cell">R$4.132 Pix</td><td>120–180×70</td><td>72–117</td><td>100 кг</td><td>2</td><td>Checkout</td><td class="verdict">Сильная гарантия</td>
+          </tr>
+          <tr>
+            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_19286aa1-d316-43f6-9f15-7a8f4c5e4e15.webp?v=1781182271" alt="GenioDesk PRO"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro" target="_blank" rel="noopener">GenioDesk PRO</a></div></td>
+            <td class="price-cell">R$4.512 Pix</td><td>120–200×80</td><td>66–129</td><td>120 кг</td><td>2</td><td>Checkout</td><td class="verdict">Лучший premium</td>
+          </tr>
+          <tr>
+            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_SMART_4f830e55-727e-4c2d-baf9-666d213b2843.webp?v=1781182552" alt="GenioDesk PRO Smart"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro-smart-wi-fi" target="_blank" rel="noopener">GenioDesk PRO Smart</a></div></td>
+            <td class="price-cell">R$4.748 Pix</td><td>120–200×80</td><td>66–129</td><td>120 кг</td><td>2</td><td>Checkout</td><td class="verdict">Premium + Wi‑Fi/Alexa</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12.5px;color:var(--text-secondary);margin-top:10px;">* Цены: Pix, если так указано; либо текущая цена карточки/диапазон конфигураций. Amazon Xyndyx сейчас имеет нестабильную доступность «featured offer», поэтому цена приведена как ориентир из текущей индексированной карточки.</p>
+  </section>
+
+  <section>
+    <h2>Бюджет и разумная середина</h2>
+
+    <div class="detail-card">
+      <div class="photo"><img src="https://static.mundomax.com.br/produtos/86969/550/1.jpg" alt="Fortrek Lift 120×60"></div>
+      <div class="content">
+        <span class="tag" style="background:var(--badge-dark)">Лучший бюджет</span>
+        <h3><a href="https://loja.fortrek.com.br/mesa-eletrica-altura-ajustavel-motor-unico-fortrek-lift-preta-120x60?condition=N" target="_blank" rel="noopener">1. Fortrek Lift 120×60</a></h3>
+        <div class="price">≈ R$806,34</div>
+        <div class="spec-line"><span class="k">Столешница</span><span class="v">120×60×1,5 см, агломерированная древесина</span></div>
+        <div class="spec-line"><span class="k">Высота</span><span class="v">73–118 см</span></div>
+        <div class="spec-line"><span class="k">Нагрузка</span><span class="v">до 60 кг</span></div>
+        <div class="spec-line"><span class="k">Мотор</span><span class="v">1, скорость 20 мм/с</span></div>
+        <div class="spec-line"><span class="k">Память</span><span class="v">2 позиции</span></div>
+        <div class="spec-line"><span class="k">Питание</span><span class="v">Bivolt 100–240 V</span></div>
+        <div class="spec-line"><span class="k">Гарантия</span><span class="v">90 дней по карточке Fortrek</span></div>
+        <p class="why"><b>Почему в подборке:</b> за эту цену это наиболее понятный полноценный электрический стол от локально продаваемого бренда. Хорош для ноутбука + 1–2 мониторов без экстремально тяжелого сетапа.</p>
+        <p class="nuance"><b>Доставка к CEP 22640‑102:</b> подтверждено бесплатное отправление по Sudeste (кроме ES) при заказе &gt; R$100; Rio de Janeiro входит.</p>
+        <p class="nuance"><b>Нюанс:</b> короткая гарантия — главный минус. Столешница на 15 мм тоньше, чем у более дорогих моделей.</p>
+        <a class="link" href="https://loja.fortrek.com.br/mesa-eletrica-altura-ajustavel-motor-unico-fortrek-lift-preta-120x60?condition=N" target="_blank" rel="noopener">Открыть товар →</a>
+      </div>
+    </div>
+
+    <div class="detail-card">
+      <div class="photo"><img src="https://m.media-amazon.com/images/I/61IByyEqR2L._AC_SL1500_.jpg" alt="Xyndyx 122×60 Amazon"></div>
+      <div class="content">
+        <span class="tag" style="background:var(--badge-dark)">Amazon: проверить в корзине</span>
+        <h3><a href="https://www.amazon.com.br/Xyndyx-el%C3%A9trica-ajust%C3%A1vel-escrit%C3%B3rio-superior/dp/B0F93SXDH6" target="_blank" rel="noopener">2. Xyndyx 122×60 — Amazon Brasil</a></h3>
+        <div class="price">≈ R$1.412,83 (ориентир)</div>
+        <div class="spec-line"><span class="k">Столешница</span><span class="v">≈122×60 см</span></div>
+        <div class="spec-line"><span class="k">Высота</span><span class="v">около 76–123 см по карточке</span></div>
+        <div class="spec-line"><span class="k">Нагрузка</span><span class="v">до 80 кг</span></div>
+        <div class="spec-line"><span class="k">Отзывы</span><span class="v">4,5/5, около 296 оценок на момент проверки</span></div>
+        <div class="spec-line"><span class="k">Комплектация</span><span class="v">полный стол, не только рама</span></div>
+        <p class="why"><b>Почему в подборке:</b> интересен как Amazon‑вариант: много отзывов и неплохая нагрузка. Если Amazon покажет доступную доставку и цену около R$1,4k, это хороший вариант между Fortrek и локальными брендами.</p>
+        <p class="nuance"><b>Доставка к CEP 22640‑102:</b> цена и доставка рассчитываются Amazon в checkout; публично точную доставку подтвердить нельзя.</p>
+        <p class="nuance"><b>Нюанс:</b> на момент проверки Amazon не показывал стабильную «featured offer» в карточке. Перед заказом обязательно проверить продавца, срок и гарантию.</p>
+        <a class="link" href="https://www.amazon.com.br/Xyndyx-el%C3%A9trica-ajust%C3%A1vel-escrit%C3%B3rio-superior/dp/B0F93SXDH6" target="_blank" rel="noopener">Открыть товар →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Лучше по сервису до R$1,6k</h2>
+    <div class="detail-card">
+      <div class="photo"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/slikdesk-starter-castanho-rustico-01-1c60028d541a11d26417724607853483-1024-1024.png" alt="Slikdesk Starter 120×60"></div>
+      <div class="content">
+        <span class="tag" style="background:var(--badge-blue)">Лучше по сервису до R$1,6k</span>
+        <h3><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-starter/" target="_blank" rel="noopener">3. Slikdesk Starter 120×60</a></h3>
+        <div class="price">R$1.510,50 Pix / R$1.590 карта</div>
+        <div class="spec-line"><span class="k">Столешница</span><span class="v">120×60, входит в комплект</span></div>
+        <div class="spec-line"><span class="k">Высота</span><span class="v">72–114 см</span></div>
+        <div class="spec-line"><span class="k">Нагрузка</span><span class="v">до 70 кг</span></div>
+        <div class="spec-line"><span class="k">Память</span><span class="v">3 позиции</span></div>
+        <div class="spec-line"><span class="k">Безопасность</span><span class="v">датчик anticolisão</span></div>
+        <div class="spec-line"><span class="k">Доставка</span><span class="v">frete grátis по RJ по текущим правилам</span></div>
+        <p class="why"><b>Почему в подборке:</b> хороший шаг вверх от Fortrek за счет более развитого управления, anticolisão и понятного бразильского сервиса.</p>
+        <p class="nuance"><b>Доставка к CEP 22640‑102:</b> подтверждено frete grátis для Rio de Janeiro при соблюдении условий действующей политики Slikdesk.</p>
+        <p class="nuance"><b>Нюанс:</b> максимум 114 см — для высокого пользователя может оказаться мало. Лучше измерить нужную высоту локтя стоя до покупки.</p>
+        <a class="link" href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-starter/" target="_blank" rel="noopener">Открыть товар →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Средний сегмент: где начинается заметный прирост качества</h2>
+
+    <div class="detail-card">
+      <div class="photo"><img src="https://lojaelevate.com.br/wp-content/uploads/2025/03/320-Preta-Tampo-Louro-Freijo-de-Frente-160cm.jpg" alt="Elevate 320 140×70"></div>
+      <div class="content">
+        <span class="tag" style="background:var(--badge-bg)">Мой выбор: цена/качество</span>
+        <h3><a href="https://lojaelevate.com.br/produto/mesa-regulagem-altura-eletrico-elevate-320-com-tampo/" target="_blank" rel="noopener">4. Elevate 320 — рекомендуемая конфигурация 140×70</a></h3>
+        <div class="price">R$2.290–2.690 на официальном сайте</div>
+        <div class="spec-line"><span class="k">Столешница</span><span class="v">MDF 25 мм; 120–180 см шириной, 60/70 см глубиной</span></div>
+        <div class="spec-line"><span class="k">Высота</span><span class="v">74–122 см с столешницей 25 мм</span></div>
+        <div class="spec-line"><span class="k">Нагрузка</span><span class="v">до 100 кг, включая вес столешницы</span></div>
+        <div class="spec-line"><span class="k">Моторы</span><span class="v">2, 28 мм/с</span></div>
+        <div class="spec-line"><span class="k">Память</span><span class="v">3 позиции + цифровой дисплей</span></div>
+        <div class="spec-line"><span class="k">Безопасность</span><span class="v">anticolisão + Lock</span></div>
+        <div class="spec-line"><span class="k">Гарантия</span><span class="v">2 года на базу для покупок с 2026; 1 год на столешницу</span></div>
+        <p class="why"><b>Почему в подборке:</b> самый сбалансированный апгрейд. Два мотора, более толстый MDF, 100 кг, нормальный диапазон высоты и 2‑летняя гарантия. Для домашнего офиса с двумя мониторами 140×70 — очень удачный размер.</p>
+        <p class="nuance"><b>Доставка к CEP 22640‑102:</b> стоимость и срок рассчитываются в checkout. На Mercado Livre отдельные конфигурации Elevate часто показываются с frete grátis.</p>
+        <p class="nuance"><b>Нюанс:</b> точная цена зависит от размера/отделки, доставка на официальном сайте считается в checkout.</p>
+        <a class="link" href="https://lojaelevate.com.br/produto/mesa-regulagem-altura-eletrico-elevate-320-com-tampo/" target="_blank" rel="noopener">Открыть товар →</a>
+      </div>
+    </div>
+
+    <div class="detail-card">
+      <div class="photo"><img src="https://cougargaming.com/_cgrwdr_/wwdpp/wp-content/uploads/2024/11/E-Grav-Generous-Desktop-Dimensions-2560-1.jpg" alt="Cougar E-Grav 180"></div>
+      <div class="content">
+        <span class="tag" style="background:var(--badge-purple)">Лучший большой стол</span>
+        <h3><a href="https://www.mercadolivre.com.br/mesa-eletrica-cougar-e-grav-180-2-configuracoes-preta/p/MLB61583604" target="_blank" rel="noopener">5. Cougar E‑Grav 180</a></h3>
+        <div class="price">R$2.379 на Mercado Livre</div>
+        <div class="spec-line"><span class="k">Столешница</span><span class="v">180×80 см</span></div>
+        <div class="spec-line"><span class="k">Высота</span><span class="v">73–118 см</span></div>
+        <div class="spec-line"><span class="k">Нагрузка</span><span class="v">до 120 кг</span></div>
+        <div class="spec-line"><span class="k">Моторы</span><span class="v">2</span></div>
+        <div class="spec-line"><span class="k">Память</span><span class="v">2 позиции</span></div>
+        <div class="spec-line"><span class="k">Комплектация</span><span class="v">кабельный лоток, крючок для гарнитуры, full‑desk mousepad</span></div>
+        <div class="spec-line"><span class="k">Питание</span><span class="v">100–240 V</span></div>
+        <p class="why"><b>Почему в подборке:</b> очень много стола за деньги: огромная поверхность, двойной мотор и 120 кг. Для большого сетапа с несколькими мониторами — предложение сильнее многих «офисных» моделей той же цены.</p>
+        <p class="nuance"><b>Доставка к CEP 22640‑102:</b> Mercado Livre на момент проверки показывает frete grátis; точный ETA нужно подтвердить в корзине.</p>
+        <p class="nuance"><b>Нюанс:</b> размер 180×80 реально огромный для квартиры. Высота максимум 118 см — не лучший выбор для очень высокого пользователя.</p>
+        <a class="link" href="https://www.mercadolivre.com.br/mesa-eletrica-cougar-e-grav-180-2-configuracoes-preta/p/MLB61583604" target="_blank" rel="noopener">Открыть на Mercado Livre →</a>
+        &nbsp;·&nbsp;
+        <a class="link" href="https://cougargaming.com/products/desks/e-grav-160-180/" target="_blank" rel="noopener">Характеристики производителя →</a>
+      </div>
+    </div>
+
+    <div class="detail-card">
+      <div class="photo"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro-capa-3da4c0d6b50a8f5ca417742813205463-640-0.jpg" alt="Slikdesk Flex Pro"></div>
+      <div class="content">
+        <span class="tag" style="background:var(--badge-blue)">Лучший диапазон высоты</span>
+        <h3><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro/" target="_blank" rel="noopener">6. Slikdesk Flex Pro</a></h3>
+        <div class="price">R$2.460,50 Pix / R$2.590 карта</div>
+        <div class="spec-line"><span class="k">Высота</span><span class="v">65–130 см — один из лучших диапазонов в подборке</span></div>
+        <div class="spec-line"><span class="k">Нагрузка</span><span class="v">до 80 кг</span></div>
+        <div class="spec-line"><span class="k">Безопасность</span><span class="v">anticolisão</span></div>
+        <div class="spec-line"><span class="k">Панель</span><span class="v">память + USB‑A/USB‑C по линейке</span></div>
+        <div class="spec-line"><span class="k">Гарантия</span><span class="v">1 год по текущей карточке</span></div>
+        <div class="spec-line"><span class="k">Доставка</span><span class="v">frete grátis в RJ</span></div>
+        <p class="why"><b>Почему в подборке:</b> лучший вариант, если важен именно широкий диапазон высоты: очень низко для сидячей позиции и до 130 см стоя.</p>
+        <p class="nuance"><b>Доставка к CEP 22640‑102:</b> подтверждено frete grátis для Rio de Janeiro по действующей политике Slikdesk.</p>
+        <p class="nuance"><b>Нюанс:</b> за сопоставимые деньги Elevate 320 дает два мотора и 100 кг. Flex Pro стоит брать именно ради диапазона 65–130 см.</p>
+        <a class="link" href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro/" target="_blank" rel="noopener">Открыть товар →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Более дорогие и премиальные</h2>
+
+    <div class="detail-card">
+      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/HOME_a03350d0-2914-4bb4-8e0a-d618f97a1c3c.webp?v=1781182477" alt="GenioDesk HOME"></div>
+      <div class="content">
+        <span class="tag" style="background:var(--badge-dark)">Хорошая, но не лучшая цена</span>
+        <h3><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-home" target="_blank" rel="noopener">7. GenioDesk HOME</a></h3>
+        <div class="price">R$2.706,55 Pix / R$2.849 карта</div>
+        <div class="spec-line"><span class="k">Столешницы</span><span class="v">120×70 / 140×70 / 160×70, 25 мм</span></div>
+        <div class="spec-line"><span class="k">Высота</span><span class="v">74–121 см</span></div>
+        <div class="spec-line"><span class="k">Нагрузка</span><span class="v">70 кг</span></div>
+        <div class="spec-line"><span class="k">Мотор</span><span class="v">1</span></div>
+        <div class="spec-line"><span class="k">Память</span><span class="v">нет</span></div>
+        <div class="spec-line"><span class="k">Гарантия</span><span class="v">2 года на структуру и мотор; 1 год на столешницу</span></div>
+        <div class="spec-line"><span class="k">Наличие</span><span class="v">в наличии; заявлена отправка до 24 ч</span></div>
+        <p class="why"><b>Почему в подборке:</b> качественная локальная экосистема и хорошая поддержка, но на текущей цене модель менее выгодна технически, чем Elevate 320.</p>
+        <p class="nuance"><b>Доставка к CEP 22640‑102:</b> сайт рассчитывает frete после ввода CEP; публичной фиксированной ставки нет.</p>
+        <p class="nuance"><b>Нюанс:</b> при цене почти R$2,85k один мотор и отсутствие памяти делают её слабее по value. Брать имеет смысл ради бренда/сервиса GenioDesk.</p>
+        <a class="link" href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-home" target="_blank" rel="noopener">Открыть товар →</a>
+      </div>
+    </div>
+
+    <div class="detail-card">
+      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/PLUS_51d4590d-0fd2-40b4-b154-ef114703c1f3.webp?v=1781182369" alt="GenioDesk PLUS"></div>
+      <div class="content">
+        <span class="tag" style="background:var(--badge-purple)">Сильная гарантия</span>
+        <h3><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-plus" target="_blank" rel="noopener">8. GenioDesk PLUS</a></h3>
+        <div class="price">R$4.131,55 Pix / R$4.349 карта</div>
+        <div class="spec-line"><span class="k">Столешницы</span><span class="v">120–180×70 см</span></div>
+        <div class="spec-line"><span class="k">Высота</span><span class="v">72–117 см</span></div>
+        <div class="spec-line"><span class="k">Нагрузка</span><span class="v">100 кг</span></div>
+        <div class="spec-line"><span class="k">Моторы</span><span class="v">2 + anticolisão</span></div>
+        <div class="spec-line"><span class="k">Память</span><span class="v">4 позиции</span></div>
+        <div class="spec-line"><span class="k">Гарантия</span><span class="v">4 года на структуру и мотор; 1 год на столешницу</span></div>
+        <p class="why"><b>Почему в подборке:</b> качественная двухмоторная система с длинной гарантией и локальным сервисом. Хороший вариант, если хочется купить «надолго».</p>
+        <p class="nuance"><b>Доставка к CEP 22640‑102:</b> стоимость доставки рассчитывается в checkout.</p>
+        <p class="nuance"><b>Нюанс:</b> 117 см максимум — меньше, чем у Elevate 320 и особенно GenioDesk PRO. При такой цене чаще имеет смысл доплатить до PRO.</p>
+        <a class="link" href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-plus" target="_blank" rel="noopener">Открыть товар →</a>
+      </div>
+    </div>
+
+    <div class="detail-card">
+      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_19286aa1-d316-43f6-9f15-7a8f4c5e4e15.webp?v=1781182271" alt="GenioDesk PRO"></div>
+      <div class="content">
+        <span class="tag" style="background:var(--badge-blue)">Лучший premium</span>
+        <h3><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro" target="_blank" rel="noopener">9. GenioDesk PRO</a></h3>
+        <div class="price">R$4.511,55 Pix / R$4.749 карта</div>
+        <div class="spec-line"><span class="k">Столешницы</span><span class="v">120×70 до 200×80</span></div>
+        <div class="spec-line"><span class="k">Высота</span><span class="v">66–129 см</span></div>
+        <div class="spec-line"><span class="k">Нагрузка</span><span class="v">120 кг</span></div>
+        <div class="spec-line"><span class="k">Моторы</span><span class="v">2</span></div>
+        <div class="spec-line"><span class="k">Скорость</span><span class="v">4 см/с</span></div>
+        <div class="spec-line"><span class="k">Память</span><span class="v">4 позиции</span></div>
+        <div class="spec-line"><span class="k">Безопасность</span><span class="v">anticolisão</span></div>
+        <div class="spec-line"><span class="k">Гарантия</span><span class="v">4 года на структуру и мотор; 1 год на столешницу</span></div>
+        <p class="why"><b>Почему в подборке:</b> лучший premium в этой подборке: широкий диапазон, высокая нагрузка, двойной мотор, быстрая регулировка, большая свобода по столешницам и 4‑летняя гарантия.</p>
+        <p class="nuance"><b>Доставка к CEP 22640‑102:</b> стоимость доставки считается после ввода CEP в checkout.</p>
+        <p class="nuance"><b>Нюанс:</b> дорого. Если не нужен диапазон 66–129 см и большая столешница, Elevate 320 рациональнее.</p>
+        <a class="link" href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro" target="_blank" rel="noopener">Открыть товар →</a>
+      </div>
+    </div>
+
+    <div class="detail-card">
+      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_SMART_4f830e55-727e-4c2d-baf9-666d213b2843.webp?v=1781182552" alt="GenioDesk PRO Smart"></div>
+      <div class="content">
+        <span class="tag" style="background:var(--badge-dark)">Smart‑upgrade</span>
+        <h3><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro-smart-wi-fi" target="_blank" rel="noopener">10. GenioDesk PRO Smart (Wi‑Fi)</a></h3>
+        <div class="price">R$4.748,10 Pix / R$4.998 карта</div>
+        <div class="spec-line"><span class="k">База</span><span class="v">по сути PRO: 66–129 см, 120 кг, 2 мотора</span></div>
+        <div class="spec-line"><span class="k">Память</span><span class="v">4 позиции</span></div>
+        <div class="spec-line"><span class="k">Smart</span><span class="v">Wi‑Fi + управление Alexa / голосовые сценарии</span></div>
+        <div class="spec-line"><span class="k">Столешницы</span><span class="v">120×70 до 200×80</span></div>
+        <div class="spec-line"><span class="k">Гарантия</span><span class="v">4 года total по карточке</span></div>
+        <p class="why"><b>Почему в подборке:</b> имеет смысл только если реально хочется интеграцию в smart‑home/Alexa. По механике PRO уже даёт почти всё необходимое.</p>
+        <p class="nuance"><b>Доставка к CEP 22640‑102:</b> стоимость доставки рассчитывается в checkout.</p>
+        <p class="nuance"><b>Нюанс:</b> доплата относительно обычного PRO — преимущественно за smart‑функции, а не за лучшую механику.</p>
+        <a class="link" href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro-smart-wi-fi" target="_blank" rel="noopener">Открыть товар →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Финальная рекомендация</h2>
+    <div class="table-scroll">
+      <table class="rec-table">
+        <thead><tr><th>Бюджет / задача</th><th>Выбор</th><th>Почему</th></tr></thead>
+        <tbody>
+          <tr><td>До R$1.000</td><td><a href="https://loja.fortrek.com.br/mesa-eletrica-altura-ajustavel-motor-unico-fortrek-lift-preta-120x60?condition=N" target="_blank" rel="noopener">Fortrek Lift</a></td><td>Если нужен электрический стол как можно дешевле. Покупка оправдана даже с учётом короткой гарантии.</td></tr>
+          <tr><td>R$1.500–1.700</td><td><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-starter/" target="_blank" rel="noopener">Slikdesk Starter</a></td><td>Если хочется более понятного сервиса, anticolisão и бесплатной доставки в RJ.</td></tr>
+          <tr><td>R$2.300–2.700</td><td><a href="https://lojaelevate.com.br/produto/mesa-regulagem-altura-eletrico-elevate-320-com-tampo/" target="_blank" rel="noopener">Elevate 320 140×70</a></td><td>Главная рекомендация. Оптимальный баланс стабильности, двух моторов, толщины столешницы, высоты и гарантии.</td></tr>
+          <tr><td>Около R$2.400 и много места</td><td><a href="https://www.mercadolivre.com.br/mesa-eletrica-cougar-e-grav-180-2-configuracoes-preta/p/MLB61583604" target="_blank" rel="noopener">Cougar E‑Grav 180</a></td><td>Лучший выбор для огромного сетапа: 180×80 и 120 кг.</td></tr>
+          <tr><td>Нужна высота до 130 см</td><td><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro/" target="_blank" rel="noopener">Slikdesk Flex Pro</a></td><td>Нишевый, но очень полезный вариант для высокого пользователя.</td></tr>
+          <tr><td>R$4,5k+</td><td><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro" target="_blank" rel="noopener">GenioDesk PRO</a></td><td>Лучший premium, если важны 66–129 см, 120 кг, 4 года гарантии и локальный сервис.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Перед оплатой</h2>
+    <ol class="checklist">
+      <li><b>Измерить необходимую высоту стоя:</b> локти примерно под 90°, измерить расстояние от пола до предплечья. Максимальная высота стола должна быть не ниже этой точки.</li>
+      <li><b>Проверить глубину:</b> 70–80 см заметно комфортнее 60 см, если используется большой монитор или монитор на штатной подставке.</li>
+      <li><b>Подтвердить frete и срок именно для CEP 22640‑102 в корзине:</b> публичные страницы не всегда показывают ту же логистику, что авторизованный checkout.</li>
+      <li><b>Если используются два тяжёлых монитора на кронштейнах</b> — предпочтительнее 2 мотора и запас нагрузки 100+ кг.</li>
+    </ol>
+  </section>
+
+  <footer class="page">
+    Подборка составлена 12 августа 2026 для Barra da Tijuca, Rio de Janeiro (CEP 22640‑102). Цены и наличие товаров могут измениться — перед покупкой сверяйте актуальную цену и условия доставки на сайте продавца.
+  </footer>
+</div>
+
+<script type="module">
+  import { animate, inView, stagger, spring } from "https://cdn.jsdelivr.net/npm/motion@11/+esm";
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!reduce) {
+    inView(".pcard", (el) => {
+      animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: stagger(0.08), easing: spring({ stiffness: 120, damping: 18 }) });
+    });
+    inView(".detail-card", (el) => {
+      animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, easing: spring({ stiffness: 120, damping: 18 }) });
+    });
+  } else {
+    document.querySelectorAll(".pcard, .detail-card").forEach(el => { el.style.opacity = 1; el.style.transform = "none"; });
+  }
+</script>
