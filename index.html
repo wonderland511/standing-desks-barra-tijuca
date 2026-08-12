@@ -127,8 +127,6 @@
     flex-direction:column;
     text-decoration:none;
     color:var(--text);
-    opacity:0;
-    transform:translateY(20px);
   }
   .pcard .imgwrap{
     aspect-ratio:4/3;
@@ -137,6 +135,13 @@
     position:relative;
   }
   .pcard img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+  .imgwrap.img-broken, .photo.img-broken{
+    display:flex;align-items:center;justify-content:center;min-height:220px;
+  }
+  .imgwrap.img-broken::after, .photo.img-broken::after{
+    content:"Фото недоступно — см. страницу товара";
+    color:var(--text-secondary);font-size:12.5px;text-align:center;padding:0 24px;
+  }
   .pcard:hover img{transform:scale(1.05);}
   .pcard .badge{
     position:absolute;top:12px;left:12px;
@@ -201,8 +206,6 @@
     overflow:hidden;
     display:grid;
     grid-template-columns:280px 1fr;
-    opacity:0;
-    transform:translateY(20px);
   }
   @media (max-width:720px){ .detail-card{grid-template-columns:1fr;} }
   .detail-card .photo{background:var(--table-row-alt);}
@@ -260,7 +263,7 @@
     <h2>Короткий ответ: что брать</h2>
     <div class="priority-grid" id="priority-grid">
       <a class="pcard" href="https://loja.fortrek.com.br/mesa-eletrica-altura-ajustavel-motor-unico-fortrek-lift-preta-120x60?condition=N" target="_blank" rel="noopener">
-        <div class="imgwrap"><span class="badge" style="background:var(--badge-dark)">Мин. бюджет</span><img src="https://static.mundomax.com.br/produtos/86969/550/1.jpg" alt="Fortrek Lift 120×60"></div>
+        <div class="imgwrap"><span class="badge" style="background:var(--badge-dark)">Мин. бюджет</span><img src="https://static.mundomax.com.br/produtos/86969/550/1.jpg" alt="Fortrek Lift 120×60" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
         <div class="body">
           <p class="name">Fortrek Lift 120×60</p>
           <p class="price">≈ R$806</p>
@@ -269,7 +272,7 @@
         </div>
       </a>
       <a class="pcard" href="https://lojaelevate.com.br/produto/mesa-regulagem-altura-eletrico-elevate-320-com-tampo/" target="_blank" rel="noopener">
-        <div class="imgwrap"><span class="badge">Лучший баланс</span><img src="https://lojaelevate.com.br/wp-content/uploads/2025/03/320-Preta-Tampo-Louro-Freijo-de-Frente-160cm.jpg" alt="Elevate 320 140×70"></div>
+        <div class="imgwrap"><span class="badge">Лучший баланс</span><img src="https://lojaelevate.com.br/wp-content/uploads/2025/03/320-Preta-Tampo-Louro-Freijo-de-Frente-160cm.jpg" alt="Elevate 320 140×70" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
         <div class="body">
           <p class="name">Elevate 320 140×70</p>
           <p class="price">≈ R$2.3–2.7k</p>
@@ -278,7 +281,7 @@
         </div>
       </a>
       <a class="pcard" href="https://www.mercadolivre.com.br/mesa-eletrica-cougar-e-grav-180-2-configuracoes-preta/p/MLB61583604" target="_blank" rel="noopener">
-        <div class="imgwrap"><span class="badge" style="background:var(--badge-purple)">Большой стол</span><img src="https://cougargaming.com/_cgrwdr_/wwdpp/wp-content/uploads/2024/11/E-Grav-Generous-Desktop-Dimensions-2560-1.jpg" alt="Cougar E-Grav 180"></div>
+        <div class="imgwrap"><span class="badge" style="background:var(--badge-purple)">Большой стол</span><img src="https://cougargaming.com/_cgrwdr_/wwdpp/wp-content/uploads/2024/11/E-Grav-Generous-Desktop-Dimensions-2560-1.jpg" alt="Cougar E-Grav 180" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
         <div class="body">
           <p class="name">Cougar E‑Grav 180</p>
           <p class="price">R$2.379</p>
@@ -287,7 +290,7 @@
         </div>
       </a>
       <a class="pcard" href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro" target="_blank" rel="noopener">
-        <div class="imgwrap"><span class="badge" style="background:var(--badge-blue)">Премиум</span><img src="https://geniodesk.com.br/cdn/shop/files/PRO_19286aa1-d316-43f6-9f15-7a8f4c5e4e15.webp?v=1781182271" alt="GenioDesk PRO"></div>
+        <div class="imgwrap"><span class="badge" style="background:var(--badge-blue)">Премиум</span><img src="https://geniodesk.com.br/cdn/shop/files/PRO_19286aa1-d316-43f6-9f15-7a8f4c5e4e15.webp?v=1781182271" alt="GenioDesk PRO" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
         <div class="body">
           <p class="name">GenioDesk PRO</p>
           <p class="price">R$4.511 Pix</p>
@@ -309,43 +312,43 @@
         </thead>
         <tbody>
           <tr>
-            <td><div class="model-cell"><img src="https://static.mundomax.com.br/produtos/86969/550/1.jpg" alt="Fortrek Lift"><a href="https://loja.fortrek.com.br/mesa-eletrica-altura-ajustavel-motor-unico-fortrek-lift-preta-120x60?condition=N" target="_blank" rel="noopener">Fortrek Lift</a></div></td>
+            <td><div class="model-cell"><img src="https://static.mundomax.com.br/produtos/86969/550/1.jpg" alt="Fortrek Lift" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"><a href="https://loja.fortrek.com.br/mesa-eletrica-altura-ajustavel-motor-unico-fortrek-lift-preta-120x60?condition=N" target="_blank" rel="noopener">Fortrek Lift</a></div></td>
             <td class="price-cell">R$806</td><td>120×60</td><td>73–118</td><td>60 кг</td><td>1</td><td>Бесплатно: RJ</td><td class="verdict">Лучший бюджет</td>
           </tr>
           <tr>
-            <td><div class="model-cell"><img src="https://m.media-amazon.com/images/I/61IByyEqR2L._AC_SL1500_.jpg" alt="Xyndyx Amazon"><a href="https://www.amazon.com.br/Xyndyx-el%C3%A9trica-ajust%C3%A1vel-escrit%C3%B3rio-superior/dp/B0F93SXDH6" target="_blank" rel="noopener">Xyndyx Amazon</a></div></td>
+            <td><div class="model-cell"><img src="https://m.media-amazon.com/images/I/61IByyEqR2L._AC_SL1500_.jpg" alt="Xyndyx Amazon" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"><a href="https://www.amazon.com.br/Xyndyx-el%C3%A9trica-ajust%C3%A1vel-escrit%C3%B3rio-superior/dp/B0F93SXDH6" target="_blank" rel="noopener">Xyndyx Amazon</a></div></td>
             <td class="price-cell">~R$1.413</td><td>122×60</td><td>≈76–123</td><td>80 кг</td><td>1</td><td>Checkout Amazon</td><td class="verdict">Альтернатива Amazon</td>
           </tr>
           <tr>
-            <td><div class="model-cell"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/slikdesk-starter-castanho-rustico-01-1c60028d541a11d26417724607853483-1024-1024.png" alt="Slikdesk Starter"><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-starter/" target="_blank" rel="noopener">Slikdesk Starter</a></div></td>
+            <td><div class="model-cell"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/slikdesk-starter-castanho-rustico-01-1c60028d541a11d26417724607853483-1024-1024.png" alt="Slikdesk Starter" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-starter/" target="_blank" rel="noopener">Slikdesk Starter</a></div></td>
             <td class="price-cell">R$1.510 Pix</td><td>120×60</td><td>72–114</td><td>70 кг</td><td>1</td><td>Бесплатно: RJ</td><td class="verdict">Лучше по сервису</td>
           </tr>
           <tr>
-            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/HOME_a03350d0-2914-4bb4-8e0a-d618f97a1c3c.webp?v=1781182477" alt="GenioDesk HOME"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-home" target="_blank" rel="noopener">GenioDesk HOME</a></div></td>
+            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/HOME_a03350d0-2914-4bb4-8e0a-d618f97a1c3c.webp?v=1781182477" alt="GenioDesk HOME" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-home" target="_blank" rel="noopener">GenioDesk HOME</a></div></td>
             <td class="price-cell">R$2.707 Pix</td><td>120/140/160×70</td><td>74–121</td><td>70 кг</td><td>1</td><td>Checkout</td><td class="verdict">Качественно, но дорого за 1 мотор</td>
           </tr>
           <tr>
-            <td><div class="model-cell"><img src="https://cougargaming.com/_cgrwdr_/wwdpp/wp-content/uploads/2024/11/E-Grav-Generous-Desktop-Dimensions-2560-1.jpg" alt="Cougar E-Grav 180"><a href="https://www.mercadolivre.com.br/mesa-eletrica-cougar-e-grav-180-2-configuracoes-preta/p/MLB61583604" target="_blank" rel="noopener">Cougar E‑Grav 180</a></div></td>
+            <td><div class="model-cell"><img src="https://cougargaming.com/_cgrwdr_/wwdpp/wp-content/uploads/2024/11/E-Grav-Generous-Desktop-Dimensions-2560-1.jpg" alt="Cougar E-Grav 180" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"><a href="https://www.mercadolivre.com.br/mesa-eletrica-cougar-e-grav-180-2-configuracoes-preta/p/MLB61583604" target="_blank" rel="noopener">Cougar E‑Grav 180</a></div></td>
             <td class="price-cell">R$2.379</td><td>180×80</td><td>73–118</td><td>120 кг</td><td>2</td><td>ML: frete grátis</td><td class="verdict">Лучший большой</td>
           </tr>
           <tr>
-            <td><div class="model-cell"><img src="https://lojaelevate.com.br/wp-content/uploads/2025/03/320-Preta-Tampo-Louro-Freijo-de-Frente-160cm.jpg" alt="Elevate 320"><a href="https://lojaelevate.com.br/produto/mesa-regulagem-altura-eletrico-elevate-320-com-tampo/" target="_blank" rel="noopener">Elevate 320</a></div></td>
+            <td><div class="model-cell"><img src="https://lojaelevate.com.br/wp-content/uploads/2025/03/320-Preta-Tampo-Louro-Freijo-de-Frente-160cm.jpg" alt="Elevate 320" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"><a href="https://lojaelevate.com.br/produto/mesa-regulagem-altura-eletrico-elevate-320-com-tampo/" target="_blank" rel="noopener">Elevate 320</a></div></td>
             <td class="price-cell">R$2.290–2.690</td><td>120–180 × 60/70</td><td>74–122</td><td>100 кг</td><td>2</td><td>Checkout</td><td class="verdict">Лучший баланс</td>
           </tr>
           <tr>
-            <td><div class="model-cell"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro-capa-3da4c0d6b50a8f5ca417742813205463-640-0.jpg" alt="Slikdesk Flex Pro"><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro/" target="_blank" rel="noopener">Slikdesk Flex Pro</a></div></td>
+            <td><div class="model-cell"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro-capa-3da4c0d6b50a8f5ca417742813205463-640-0.jpg" alt="Slikdesk Flex Pro" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro/" target="_blank" rel="noopener">Slikdesk Flex Pro</a></div></td>
             <td class="price-cell">R$2.461 Pix</td><td>от 80×60</td><td>65–130</td><td>80 кг</td><td>1</td><td>Бесплатно: RJ</td><td class="verdict">Лучший диапазон</td>
           </tr>
           <tr>
-            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/PLUS_51d4590d-0fd2-40b4-b154-ef114703c1f3.webp?v=1781182369" alt="GenioDesk PLUS"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-plus" target="_blank" rel="noopener">GenioDesk PLUS</a></div></td>
+            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/PLUS_51d4590d-0fd2-40b4-b154-ef114703c1f3.webp?v=1781182369" alt="GenioDesk PLUS" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-plus" target="_blank" rel="noopener">GenioDesk PLUS</a></div></td>
             <td class="price-cell">R$4.132 Pix</td><td>120–180×70</td><td>72–117</td><td>100 кг</td><td>2</td><td>Checkout</td><td class="verdict">Сильная гарантия</td>
           </tr>
           <tr>
-            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_19286aa1-d316-43f6-9f15-7a8f4c5e4e15.webp?v=1781182271" alt="GenioDesk PRO"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro" target="_blank" rel="noopener">GenioDesk PRO</a></div></td>
+            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_19286aa1-d316-43f6-9f15-7a8f4c5e4e15.webp?v=1781182271" alt="GenioDesk PRO" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro" target="_blank" rel="noopener">GenioDesk PRO</a></div></td>
             <td class="price-cell">R$4.512 Pix</td><td>120–200×80</td><td>66–129</td><td>120 кг</td><td>2</td><td>Checkout</td><td class="verdict">Лучший premium</td>
           </tr>
           <tr>
-            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_SMART_4f830e55-727e-4c2d-baf9-666d213b2843.webp?v=1781182552" alt="GenioDesk PRO Smart"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro-smart-wi-fi" target="_blank" rel="noopener">GenioDesk PRO Smart</a></div></td>
+            <td><div class="model-cell"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_SMART_4f830e55-727e-4c2d-baf9-666d213b2843.webp?v=1781182552" alt="GenioDesk PRO Smart" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro-smart-wi-fi" target="_blank" rel="noopener">GenioDesk PRO Smart</a></div></td>
             <td class="price-cell">R$4.748 Pix</td><td>120–200×80</td><td>66–129</td><td>120 кг</td><td>2</td><td>Checkout</td><td class="verdict">Premium + Wi‑Fi/Alexa</td>
           </tr>
         </tbody>
@@ -358,7 +361,7 @@
     <h2>Бюджет и разумная середина</h2>
 
     <div class="detail-card">
-      <div class="photo"><img src="https://static.mundomax.com.br/produtos/86969/550/1.jpg" alt="Fortrek Lift 120×60"></div>
+      <div class="photo"><img src="https://static.mundomax.com.br/produtos/86969/550/1.jpg" alt="Fortrek Lift 120×60" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
       <div class="content">
         <span class="tag" style="background:var(--badge-dark)">Лучший бюджет</span>
         <h3><a href="https://loja.fortrek.com.br/mesa-eletrica-altura-ajustavel-motor-unico-fortrek-lift-preta-120x60?condition=N" target="_blank" rel="noopener">1. Fortrek Lift 120×60</a></h3>
@@ -378,7 +381,7 @@
     </div>
 
     <div class="detail-card">
-      <div class="photo"><img src="https://m.media-amazon.com/images/I/61IByyEqR2L._AC_SL1500_.jpg" alt="Xyndyx 122×60 Amazon"></div>
+      <div class="photo"><img src="https://m.media-amazon.com/images/I/61IByyEqR2L._AC_SL1500_.jpg" alt="Xyndyx 122×60 Amazon" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
       <div class="content">
         <span class="tag" style="background:var(--badge-dark)">Amazon: проверить в корзине</span>
         <h3><a href="https://www.amazon.com.br/Xyndyx-el%C3%A9trica-ajust%C3%A1vel-escrit%C3%B3rio-superior/dp/B0F93SXDH6" target="_blank" rel="noopener">2. Xyndyx 122×60 — Amazon Brasil</a></h3>
@@ -399,7 +402,7 @@
   <section>
     <h2>Лучше по сервису до R$1,6k</h2>
     <div class="detail-card">
-      <div class="photo"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/slikdesk-starter-castanho-rustico-01-1c60028d541a11d26417724607853483-1024-1024.png" alt="Slikdesk Starter 120×60"></div>
+      <div class="photo"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/slikdesk-starter-castanho-rustico-01-1c60028d541a11d26417724607853483-1024-1024.png" alt="Slikdesk Starter 120×60" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
       <div class="content">
         <span class="tag" style="background:var(--badge-blue)">Лучше по сервису до R$1,6k</span>
         <h3><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-starter/" target="_blank" rel="noopener">3. Slikdesk Starter 120×60</a></h3>
@@ -422,7 +425,7 @@
     <h2>Средний сегмент: где начинается заметный прирост качества</h2>
 
     <div class="detail-card">
-      <div class="photo"><img src="https://lojaelevate.com.br/wp-content/uploads/2025/03/320-Preta-Tampo-Louro-Freijo-de-Frente-160cm.jpg" alt="Elevate 320 140×70"></div>
+      <div class="photo"><img src="https://lojaelevate.com.br/wp-content/uploads/2025/03/320-Preta-Tampo-Louro-Freijo-de-Frente-160cm.jpg" alt="Elevate 320 140×70" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
       <div class="content">
         <span class="tag" style="background:var(--badge-bg)">Мой выбор: цена/качество</span>
         <h3><a href="https://lojaelevate.com.br/produto/mesa-regulagem-altura-eletrico-elevate-320-com-tampo/" target="_blank" rel="noopener">4. Elevate 320 — рекомендуемая конфигурация 140×70</a></h3>
@@ -442,7 +445,7 @@
     </div>
 
     <div class="detail-card">
-      <div class="photo"><img src="https://cougargaming.com/_cgrwdr_/wwdpp/wp-content/uploads/2024/11/E-Grav-Generous-Desktop-Dimensions-2560-1.jpg" alt="Cougar E-Grav 180"></div>
+      <div class="photo"><img src="https://cougargaming.com/_cgrwdr_/wwdpp/wp-content/uploads/2024/11/E-Grav-Generous-Desktop-Dimensions-2560-1.jpg" alt="Cougar E-Grav 180" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
       <div class="content">
         <span class="tag" style="background:var(--badge-purple)">Лучший большой стол</span>
         <h3><a href="https://www.mercadolivre.com.br/mesa-eletrica-cougar-e-grav-180-2-configuracoes-preta/p/MLB61583604" target="_blank" rel="noopener">5. Cougar E‑Grav 180</a></h3>
@@ -464,7 +467,7 @@
     </div>
 
     <div class="detail-card">
-      <div class="photo"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro-capa-3da4c0d6b50a8f5ca417742813205463-640-0.jpg" alt="Slikdesk Flex Pro"></div>
+      <div class="photo"><img src="https://acdn-us.mitiendanube.com/stores/716/003/products/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro-capa-3da4c0d6b50a8f5ca417742813205463-640-0.jpg" alt="Slikdesk Flex Pro" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
       <div class="content">
         <span class="tag" style="background:var(--badge-blue)">Лучший диапазон высоты</span>
         <h3><a href="https://slik.com.br/produtos/mesa-com-regulagem-de-altura-eletrica-slikdesk-flex-pro/" target="_blank" rel="noopener">6. Slikdesk Flex Pro</a></h3>
@@ -487,7 +490,7 @@
     <h2>Более дорогие и премиальные</h2>
 
     <div class="detail-card">
-      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/HOME_a03350d0-2914-4bb4-8e0a-d618f97a1c3c.webp?v=1781182477" alt="GenioDesk HOME"></div>
+      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/HOME_a03350d0-2914-4bb4-8e0a-d618f97a1c3c.webp?v=1781182477" alt="GenioDesk HOME" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
       <div class="content">
         <span class="tag" style="background:var(--badge-dark)">Хорошая, но не лучшая цена</span>
         <h3><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-home" target="_blank" rel="noopener">7. GenioDesk HOME</a></h3>
@@ -507,7 +510,7 @@
     </div>
 
     <div class="detail-card">
-      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/PLUS_51d4590d-0fd2-40b4-b154-ef114703c1f3.webp?v=1781182369" alt="GenioDesk PLUS"></div>
+      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/PLUS_51d4590d-0fd2-40b4-b154-ef114703c1f3.webp?v=1781182369" alt="GenioDesk PLUS" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
       <div class="content">
         <span class="tag" style="background:var(--badge-purple)">Сильная гарантия</span>
         <h3><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-plus" target="_blank" rel="noopener">8. GenioDesk PLUS</a></h3>
@@ -526,7 +529,7 @@
     </div>
 
     <div class="detail-card">
-      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_19286aa1-d316-43f6-9f15-7a8f4c5e4e15.webp?v=1781182271" alt="GenioDesk PRO"></div>
+      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_19286aa1-d316-43f6-9f15-7a8f4c5e4e15.webp?v=1781182271" alt="GenioDesk PRO" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
       <div class="content">
         <span class="tag" style="background:var(--badge-blue)">Лучший premium</span>
         <h3><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro" target="_blank" rel="noopener">9. GenioDesk PRO</a></h3>
@@ -547,7 +550,7 @@
     </div>
 
     <div class="detail-card">
-      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_SMART_4f830e55-727e-4c2d-baf9-666d213b2843.webp?v=1781182552" alt="GenioDesk PRO Smart"></div>
+      <div class="photo"><img src="https://geniodesk.com.br/cdn/shop/files/PRO_SMART_4f830e55-727e-4c2d-baf9-666d213b2843.webp?v=1781182552" alt="GenioDesk PRO Smart" referrerpolicy="no-referrer" loading="lazy" onerror="var w=this.closest('.imgwrap,.photo'); if(w){w.classList.add('img-broken');this.remove();}else{this.style.opacity='0.15';}"></div>
       <div class="content">
         <span class="tag" style="background:var(--badge-dark)">Smart‑upgrade</span>
         <h3><a href="https://geniodesk.com.br/products/mesa-com-regulagem-de-altura-geniodesk-pro-smart-wi-fi" target="_blank" rel="noopener">10. GenioDesk PRO Smart (Wi‑Fi)</a></h3>
@@ -598,18 +601,23 @@
 </div>
 
 <script type="module">
-  import { animate, inView, stagger, spring } from "https://cdn.jsdelivr.net/npm/motion@11/+esm";
-
+  // Content is visible by default in CSS (no opacity:0 there) so the page
+  // works even if this module fails to load. Only after motion loads
+  // successfully do we hide elements just-in-time and animate them in.
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   if (!reduce) {
-    inView(".pcard", (el) => {
-      animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: stagger(0.08), easing: spring({ stiffness: 120, damping: 18 }) });
-    });
-    inView(".detail-card", (el) => {
-      animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, easing: spring({ stiffness: 120, damping: 18 }) });
-    });
-  } else {
-    document.querySelectorAll(".pcard, .detail-card").forEach(el => { el.style.opacity = 1; el.style.transform = "none"; });
+    try {
+      const { animate, inView, stagger, spring } = await import("https://cdn.jsdelivr.net/npm/motion@11/+esm");
+      const els = document.querySelectorAll(".pcard, .detail-card");
+      els.forEach(el => { el.style.opacity = "0"; el.style.transform = "translateY(20px)"; });
+      inView(".pcard", (el) => {
+        animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: stagger(0.08), easing: spring({ stiffness: 120, damping: 18 }) });
+      });
+      inView(".detail-card", (el) => {
+        animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, easing: spring({ stiffness: 120, damping: 18 }) });
+      });
+    } catch (e) {
+      // CDN unreachable or blocked — content stays visible via default CSS, no-op.
+    }
   }
 </script>
