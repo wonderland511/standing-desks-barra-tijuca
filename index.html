@@ -117,6 +117,21 @@
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:20px;
   }
+  /* Появление карточек — чистый CSS, без JS/IntersectionObserver.
+     Гарантирует видимость контента даже если внешний скрипт (CDN) не загрузится. */
+  @keyframes fadeInUp{
+    from{opacity:0;transform:translateY(16px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  .pcard, .detail-card{ animation:fadeInUp .5s ease-out both; }
+  .priority-grid .pcard:nth-child(1){animation-delay:.03s;}
+  .priority-grid .pcard:nth-child(2){animation-delay:.09s;}
+  .priority-grid .pcard:nth-child(3){animation-delay:.15s;}
+  .priority-grid .pcard:nth-child(4){animation-delay:.21s;}
+  @media (prefers-reduced-motion: reduce){
+    .pcard, .detail-card{ animation:none; opacity:1; transform:none; }
+  }
+
   .pcard{
     background:var(--bg-elevated);
     border:1px solid var(--border);
@@ -601,23 +616,21 @@
 </div>
 
 <script type="module">
-  // Content is visible by default in CSS (no opacity:0 there) so the page
-  // works even if this module fails to load. Only after motion loads
-  // successfully do we hide elements just-in-time and animate them in.
+  // Entrance animation is pure CSS (@keyframes fadeInUp) — content is guaranteed
+  // visible with or without this script. Framer Motion is used here ONLY for
+  // additive micro-interactions (press feedback) that never gate visibility:
+  // if the CDN import fails, nothing breaks, cards just don't get the tap effect.
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reduce) {
     try {
-      const { animate, inView, stagger, spring } = await import("https://cdn.jsdelivr.net/npm/motion@11/+esm");
-      const els = document.querySelectorAll(".pcard, .detail-card");
-      els.forEach(el => { el.style.opacity = "0"; el.style.transform = "translateY(20px)"; });
-      inView(".pcard", (el) => {
-        animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: stagger(0.08), easing: spring({ stiffness: 120, damping: 18 }) });
-      });
-      inView(".detail-card", (el) => {
-        animate(el, { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, easing: spring({ stiffness: 120, damping: 18 }) });
+      const { animate, spring } = await import("https://cdn.jsdelivr.net/npm/motion@11/+esm");
+      document.querySelectorAll(".pcard").forEach(el => {
+        el.addEventListener("pointerdown", () => animate(el, { scale: 0.98 }, { duration: 0.15, easing: spring({ stiffness: 300, damping: 20 }) }));
+        el.addEventListener("pointerup", () => animate(el, { scale: 1 }, { duration: 0.2, easing: spring({ stiffness: 300, damping: 20 }) }));
+        el.addEventListener("pointerleave", () => animate(el, { scale: 1 }, { duration: 0.2, easing: spring({ stiffness: 300, damping: 20 }) }));
       });
     } catch (e) {
-      // CDN unreachable or blocked — content stays visible via default CSS, no-op.
+      // CDN unreachable or blocked — no micro-interaction, page unaffected.
     }
   }
 </script>
